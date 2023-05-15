@@ -16,16 +16,17 @@ let datos = {
 function dataShow(objectApi) {
     try {
         function mostrar() {
-                let latitud = objectApi.Latitud;
-                let longitud = objectApi.Longitud;
-                let fechaLocal = objectApi.fechaLocal;
-                let horaLocal = objectApi.horaLocal;
-                let fechaUtc = objectApi.fechaUtc;
-                let horaUtc = objectApi.horaUtc;
-                let magnitud = objectApi.magnitud;
-                let profundidad = objectApi.profunidad;
-                let geoReferencia = objectApi.ubicacion;
-                let dataS = [latitud, longitud, fechaLocal, horaLocal, fechaUtc, horaUtc, magnitud, profundidad];
+                const fechaLocal = objectApi.fechaLocal;
+                const horaLocal = objectApi.horaLocal;
+                const fechaUtc = objectApi.fechaUtc;
+                const horaUtc = objectApi.horaUtc;
+                const magnitud = objectApi.magnitud;
+                const profundidad = objectApi.profunidad;
+                const geoReferencia = objectApi.ubicacion;
+                const latitud = objectApi.Latitud;
+                const dataS = [latitud, longitud, fechaLocal, horaLocal, fechaUtc, horaUtc, magnitud, profundidad];
+                const longitud = objectApi.Longitud;
+
                 mapsFunction(latitud, longitud, geoReferencia);
                 despl(dataS);
         }
