@@ -15,26 +15,56 @@ let datos = {
 
 function dataShow(objectApi) {
     try {
-        function mostrar() {
-            const latitud = objectApi.Latitud;
-            const longitud = objectApi.Longitud;
-            const fechaLocal = objectApi.fechaLocal;
-            const horaLocal = objectApi.horaLocal;
-            const fechaUtc = objectApi.fechaUtc;
-            const horaUtc = objectApi.horaUtc;
-            const magnitud = objectApi.magnitud;
-            const profundidad = objectApi.profunidad;
-            const geoReferencia = objectApi.ubicacion;
-            let dataS = [latitud, longitud, fechaLocal, horaLocal, fechaUtc, horaUtc, magnitud, profundidad];
-            mapsFunction(latitud, longitud, geoReferencia);
-            despl(dataS);
-        }
-        mostrar()
 
+
+        function mostrar() {
+                let latitud = objectApi.Latitud;
+                let longitud = objectApi.Longitud;
+                let fechaLocal = objectApi.fechaLocal;
+                let horaLocal = objectApi.horaLocal;
+                let fechaUtc = objectApi.fechaUtc;
+                let horaUtc = objectApi.horaUtc;
+                let magnitud = objectApi.magnitud;
+                let profundidad = objectApi.profunidad;
+                let geoReferencia = objectApi.ubicacion;
+                let dataS = [latitud, longitud, fechaLocal, horaLocal, fechaUtc, horaUtc, magnitud, profundidad];
+                mapsFunction(latitud, longitud, geoReferencia);
+                despl(dataS);
+        }
+
+        function comprometer() {
+            
+        for (let i = 0; i < 10; i++) {
+            for_delay(i)
+        }
+
+        function for_delay(i) {
+            setTimeout(()=> {
+                dataType = typeof objectApi
+                if (dataType === 'undefined') {
+                    try {
+                        mostrar()
+                    }
+                    catch {
+                        ""
+                    }
+                } else {
+                    mostrar()
+                }
+            }, 3000 * i)
+
+        }
+
+    
+    
+    }
+        
+        comprometer()
+
+        
     } catch (error) {
-        console.log("Ha ocurrido un error " + error);
-        mostrar()
-        setInterval(mostrar(), 5000)
+        console.log(error)
+
     }
 } 
 
