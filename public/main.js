@@ -85,7 +85,6 @@ despl = (arrayData) => {
 
 
 function mapsFunction(lat, lon, ref) {
-    map.remove();
     var map = L.map('map').setView([lat, lon], 9);
     map.createPane('labels');
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
