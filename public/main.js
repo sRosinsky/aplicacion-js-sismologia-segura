@@ -8,7 +8,6 @@ let datos = {
                 })
 
                 const takeData = await response.json()
-                console.log(takeData)
                 dataShow(takeData)
         }
             
@@ -31,14 +30,13 @@ function dataShow(objectApi) {
                 mapsFunction(latitud, longitud, geoReferencia);
         }
         function comprometer() {   
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < 3; i++) {
                 for_delay(i)
             }
 
             function for_delay(i) {
                 setTimeout(()=> {
                     const dataLatitud = objectApi.Latitud;
-                    console.log(dataLatitud)
                     dataType = typeof(dataLatitud)
                     if (dataType === 'undefined') {
                         try {
@@ -57,7 +55,6 @@ function dataShow(objectApi) {
         
     comprometer()
 
-        
     } catch (error) {
         console.log(error)
 
@@ -88,16 +85,16 @@ despl = (arrayData) => {
 
 
 function mapsFunction(lat, lon, ref) {
+    map.remove();
     var map = L.map('map').setView([lat, lon], 9);
     map.createPane('labels');
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 9,
     }).addTo(map);
-    
     L.marker([lat, lon, ref]).addTo(map)
-        
         .bindPopup(`${ref}`)
         .openPopup();
+
 }
 
 bt = document.querySelector(".boton-puntuar")
@@ -116,6 +113,8 @@ function areaNota(event) {
     divinterior = document.querySelector(".div_interior")
     divinterior.setAttribute("style", "display: flex; align-items: center; justify-content: center;")
 }
+
+
 
 
 
