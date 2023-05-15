@@ -15,23 +15,26 @@ let datos = {
 
 function dataShow(objectApi) {
     try {
-        const latitud = objectApi.Latitud;
-        const longitud = objectApi.Longitud;
-        const fechaLocal = objectApi.fechaLocal;
-        const horaLocal = objectApi.horaLocal;
-        const fechaUtc = objectApi.fechaUtc;
-        const horaUtc = objectApi.horaUtc;
-        const magnitud = objectApi.magnitud;
-        const profundidad = objectApi.profunidad;
-        const geoReferencia = objectApi.ubicacion;
-        let dataS = [latitud, longitud, fechaLocal, horaLocal, fechaUtc, horaUtc, magnitud, profundidad];
-        mapsFunction(latitud, longitud, geoReferencia);
-        despl(dataS);
+        function mostrar() {
+            const latitud = objectApi.Latitud;
+            const longitud = objectApi.Longitud;
+            const fechaLocal = objectApi.fechaLocal;
+            const horaLocal = objectApi.horaLocal;
+            const fechaUtc = objectApi.fechaUtc;
+            const horaUtc = objectApi.horaUtc;
+            const magnitud = objectApi.magnitud;
+            const profundidad = objectApi.profunidad;
+            const geoReferencia = objectApi.ubicacion;
+            let dataS = [latitud, longitud, fechaLocal, horaLocal, fechaUtc, horaUtc, magnitud, profundidad];
+            mapsFunction(latitud, longitud, geoReferencia);
+            despl(dataS);
+        }
+        mostrar()
+
     } catch (error) {
         console.log("Ha ocurrido un error " + error);
-        console.log(error)
-        console.log(typeof(error))
-
+        mostrar()
+        setInterval(mostrar(), 5000)
     }
 } 
 
