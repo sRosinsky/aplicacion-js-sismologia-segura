@@ -36,7 +36,7 @@ function dataShow(objectApi) {
 
             function for_delay(i) {
                 setTimeout(()=> {
-                    dataType = typeof objectApi
+                    dataType = typeof objectApi.Latitud
                     if (dataType === 'undefined') {
                         try {
                             mostrar()
