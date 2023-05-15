@@ -15,8 +15,6 @@ let datos = {
 
 function dataShow(objectApi) {
     try {
-
-
         function mostrar() {
                 let latitud = objectApi.Latitud;
                 let longitud = objectApi.Longitud;
@@ -31,35 +29,31 @@ function dataShow(objectApi) {
                 mapsFunction(latitud, longitud, geoReferencia);
                 despl(dataS);
         }
+        function comprometer() {   
+            for (let i = 0; i < 10; i++) {
+                for_delay(i)
+            }
 
-        function comprometer() {
-            
-        for (let i = 0; i < 10; i++) {
-            for_delay(i)
-        }
-
-        function for_delay(i) {
-            setTimeout(()=> {
-                dataType = typeof objectApi
-                if (dataType === 'undefined') {
-                    try {
+            function for_delay(i) {
+                setTimeout(()=> {
+                    dataType = typeof objectApi
+                    if (dataType === 'undefined') {
+                        try {
+                            mostrar()
+                        }
+                        catch(error) {
+                            "Err: " + error; 
+                            console.log(dataType)
+                        }
+                    } else {
                         mostrar()
                     }
-                    catch {
-                        ""
-                    }
-                } else {
-                    mostrar()
-                }
-            }, 3000 * i)
+                }, 3000 * i)
 
         }
-
-    
-    
     }
         
-        comprometer()
+    comprometer()
 
         
     } catch (error) {
@@ -106,7 +100,6 @@ function mapsFunction(lat, lon, ref) {
 }
 
 bt = document.querySelector(".boton-puntuar")
-
 area = document.querySelector(".section-1-5-1");
 area.setAttribute("style", " border-top: none; height: 0;")
 area2 = document.querySelector(".section-1-5")
