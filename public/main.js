@@ -26,8 +26,8 @@ function dataShow(objectApi) {
                 const profundidad = objectApi.profunidad;
                 const geoReferencia = objectApi.ubicacion;
                 const dataS = [latitud, longitud, fechaLocal, horaLocal, fechaUtc, horaUtc, magnitud, profundidad];
-                mapsFunction(latitud, longitud, geoReferencia);
                 despl(dataS);
+                mapsFunction(latitud, longitud, geoReferencia);
         }
         function comprometer() {   
             for (let i = 0; i < 10; i++) {
@@ -88,7 +88,6 @@ despl = (arrayData) => {
 
 function mapsFunction(lat, lon, ref) {
     var map = L.map('map').setView([lat, lon], 9);
-
     map.createPane('labels');
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 9,
