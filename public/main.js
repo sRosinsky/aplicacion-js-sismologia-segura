@@ -8,6 +8,7 @@ let datos = {
                 })
 
                 const takeData = await response.json
+                console.log(takeData)
                 dataShow(takeData)
         }
             
