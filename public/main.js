@@ -28,7 +28,9 @@ function dataShow(objectApi) {
         mapsFunction(latitud, longitud, geoReferencia);
         despl(dataS);
     } catch (error) {
-        console.log("Ha ocurrido un error " + error)
+        console.log("Ha ocurrido un error " + error);
+        console.log(error)
+        console.log(typeof(error))
 
     }
 } 
