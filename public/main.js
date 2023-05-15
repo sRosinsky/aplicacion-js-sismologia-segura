@@ -7,7 +7,7 @@ let datos = {
                     method: "GET",
                 })
 
-                const takeData = await response.json
+                const takeData = await response.json()
                 console.log(takeData)
                 dataShow(takeData)
         }
