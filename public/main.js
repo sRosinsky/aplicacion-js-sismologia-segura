@@ -3,7 +3,7 @@ const url = '/api'
 let datos = {
 
         fetchDatos: async function () {
-                const response = fetch(url, {
+                const response = await fetch(url, {
                     method: "GET",
                 })
 
@@ -16,6 +16,8 @@ let datos = {
 function dataShow(objectApi) {
     try {
         function mostrar() {
+                const latitud = objectApi.Latitud;
+                const longitud = objectApi.Longitud;
                 const fechaLocal = objectApi.fechaLocal;
                 const horaLocal = objectApi.horaLocal;
                 const fechaUtc = objectApi.fechaUtc;
@@ -23,10 +25,7 @@ function dataShow(objectApi) {
                 const magnitud = objectApi.magnitud;
                 const profundidad = objectApi.profunidad;
                 const geoReferencia = objectApi.ubicacion;
-                const latitud = objectApi.Latitud;
                 const dataS = [latitud, longitud, fechaLocal, horaLocal, fechaUtc, horaUtc, magnitud, profundidad];
-                const longitud = objectApi.Longitud;
-
                 mapsFunction(latitud, longitud, geoReferencia);
                 despl(dataS);
         }
@@ -37,7 +36,7 @@ function dataShow(objectApi) {
 
             function for_delay(i) {
                 setTimeout(()=> {
-                    const dataLatitud = objectApi.Latitud
+                    const dataLatitud = objectApi.Latitud;
                     console.log(dataLatitud)
                     dataType = typeof(dataLatitud)
                     if (dataType === 'undefined') {
@@ -45,8 +44,7 @@ function dataShow(objectApi) {
                             mostrar()
                         }
                         catch(error) {
-                            "Err: " + error; 
-                            console.log(dataType)
+                            console.log("Err: " + error); 
                         }
                     } else {
                         mostrar()
