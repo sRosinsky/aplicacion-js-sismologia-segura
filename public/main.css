@@ -114,6 +114,12 @@ latlon {
 }
 
 @media screen and (max-width: 800px) {
+    .fila-h3-h4 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: 13px;
+    }
     .section-1 {
         justify-content: center;
         padding-left: 0;
@@ -144,6 +150,15 @@ latlon {
     #last-data-element {
         border-bottom: none;
     }
+
+    latlon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
 }
 
 
@@ -175,6 +190,7 @@ latlon {
         margin-top: 2.5em;
         border: solid .5px;    
     }
+
 
 
     
