@@ -108,7 +108,7 @@ function areaNota(event) {
     area2.setAttribute("style", "border-bottom: none;")
     area.setAttribute("style", "display: flex; border-left: none; border-right: none; ")
     area.setAttribute("style", "height: 10em; transition: .3s; border-bottom: solid 1px; border-top: solid 1px;");
-    area.innerHTML = ('<div class="div_interior"> <p>Prueba</p> </div>')
+    area.innerHTML = ('<div class="div_interior"> <p>Próximamente...</p> </div>')
     divinterior = document.querySelector(".div_interior")
     divinterior.setAttribute("style", "display: flex; align-items: center; justify-content: center;")
 }
