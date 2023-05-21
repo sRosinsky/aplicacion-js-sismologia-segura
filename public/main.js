@@ -87,12 +87,14 @@ despl = (arrayData) => {
 function mapsFunction(lat, lon, ref) {
     var map = L.map('map').setView([lat, lon], 9);
     map.createPane('labels');
+    document.getElementsByClassName( 'leaflet-control-attribution' )[0].style.display = 'none';
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 9,
     }).addTo(map);
     L.marker([lat, lon, ref]).addTo(map)
         .bindPopup(`${ref}`)
         .openPopup();
+
 
 }
 
