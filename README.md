@@ -1,6 +1,6 @@
 # aplicacion-js-sismologia-segura
 
-<span> Aplicación HTML, CSS, Javascript responsive, consumo de API propia. <s/pan>
+<span> Aplicación HTML, CSS, Javascript responsive, consumo de API propia. </span>
 
 <span> El despliegue de la página se puede ver aquí: </span>
 <br />
